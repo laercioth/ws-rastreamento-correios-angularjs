@@ -3,9 +3,9 @@ Find status / localization / city etc... of the merchandise
 
 <div><img alt="not_found" src="img/data.png" /></div>
 ==========================================================
-<div><img alt="found" src="img/empty_field.png" /></div>
+<div><img alt="not_found" src="img/empty_field.png" /></div>
 ==================================================
-<div><img alt="found" src="img/not_found.png" /></div>
+<div><img alt="not_found" src="img/not_found.png" /></div>
 ==================================================
 
 ###Objetivo
