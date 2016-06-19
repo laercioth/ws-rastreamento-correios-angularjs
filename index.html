@@ -1,0 +1,72 @@
+<!doctype html>
+<html ng-app="rastreamentoApp">
+	<head>
+		<title>WS-Rastreamento-Correios-AngularJS e Bootstrap</title>
+		<!-- METADATA-->
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		
+  		<!-- CSS-->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/ng-table.css">
+
+		<!-- SCRIPT-->
+		<script type="text/javascript" src="js/jquery.min.js"></script> 
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular-input-masks-standalone.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/ng-table.js"></script>
+
+		<!--AngularJS Module and Controller -->
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/rastreamentoController.js"></script>
+	</head>
+	<body ng-controller="RastreamentoCtrl">
+		<div class="container">
+			<h2 >WS-Rastreamento-Correios-AngularJS e Bootstrap</h2><br/><br/>
+			
+			<form class="form-horizontal col-sm-12" role="form">
+				<!--Número-->
+				<div class="form-group">
+					<label class="control-label col-sm-4"  for="numero">Código do objeto:</label>
+					<div class="col-sm-2">          
+						<input type="text" class="form-control" ng-disabled="loading" ng-model="nro" id="numero">
+			      	</div>
+			      	<!--BUTTON-->
+			      	<div class="col-sm-2">          
+						<button type="submit" class="btn btn-primary" ng-disabled="loading" ng-click="search(nro)">Search</button>
+				  		<button type="submit" class="btn btn-danger" ng-click="clear()">Clear</button>
+			      	</div>
+			    </div>
+				<!-- GIF -->
+				<img class="format-loading" ng-show="loading" src="img/loading_spinner.gif">
+				<!--MSGS-->
+	      		<h4 class="format-logo" ng-show="objetoNaoEncontrado">Nenhuma informação encontrada para esse número de objeto!</h4>
+	      		<h4 class="format-logo" ng-show="objetoInvalido">Favor preencher o campo corretamente!</h4>
+	      		<br><br>
+
+			    <div class="col-sm-12" ng-if="listEvent.length > 0">			    	
+			    	<table show-filter="true" class="table">
+					    <thead>
+					        	<th>Cidade</th>					        
+					        	<th>Localização da mercadoria</th>					        
+					        	<th>Data / Hora </th>					       
+					        	<th>Estado</th>					        
+					        	<th>Descrição</th>
+					    </thead>
+					    <tbody>
+					        <tr ng-repeat="event in listEvent ">
+					            	<th>{{event.city}}</th>					            
+					            	<th>{{event.place}}</th>					            
+					            	<th>{{event.date}} {{event.hour}}</th>					            
+					            	<th>{{event.state}}</th>					            
+					            	<th>{{event.description}}</th>
+					        </tr>
+					    </tbody>
+					</table>
+			    </div>
+			</form>
+		</div>
+	</body>
+</html>
