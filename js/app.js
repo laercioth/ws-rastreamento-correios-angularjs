@@ -1,7 +1,6 @@
 /*Modulo Angular*/
 var app = angular.module('rastreamentoApp', []);
 
-
  /**
  * QUANDO INCIAR O MODULO APP EXECUTAR OS COMPONENTES INCIAIS
  */
