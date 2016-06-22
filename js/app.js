@@ -1,5 +1,5 @@
 /*Modulo Angular*/
-var app = angular.module('rastreamentoApp', ['ngTable']);
+var app = angular.module('rastreamentoApp', []);
 
 
  /**
