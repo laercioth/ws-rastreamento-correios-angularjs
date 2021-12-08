@@ -1,8 +1,8 @@
 
-/*Controller NroPortabilidade*/
+/*Controller */
 app.controller('RastreamentoCtrl', function($scope, $rootScope, $http) {
 
-	/*Chamada AJAX que faz a busca de operadora*/
+	/*Chamada AJAX que faz a busca*/
 	$scope.search = function (nro){
 		$scope.reset();
 		/**PE173327987BR*/
